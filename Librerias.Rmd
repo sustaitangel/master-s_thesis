@@ -1,0 +1,45 @@
+---
+title: "Librerias de Visualizacion de datos en R Web"
+output: html_document
+---
+R es un lenguaje de programacion ampliamente utilizado para el analisis de datos y visualización de los mismos, R rabaja bajo el entorno del software libre y admas es multiplataforma, el lenguaje de programación R es utilizado no solo en aplicaciones de escritorio, tambien es utilizado en ambientes Web, con la ayuda de algunos paquetes. A continacion se mostrarán las librerias mas utilizadas para la visialización de datos en R para aplicaciones Web, junto con cada librería se muestra su forma de instalación y un ejemplo de gráfica que la misma librería contiene.
+
+#Plotly
+Plotly es una una libreria apra vizualizacón de datos basada en código abierto de JavaScript y funciona bajo el marco de trabajo de HTML para servicios locales y en la nube funciona para los sistemas operativos OS, Linux y Windows, la libreria de vizualizacion plotly puede ser utilizada en diferentes entornos de programacion, entre los que destacan R y Python. la documentacion completa de Plotly se encuentra en el siguiente enlace: [https://plot.ly/r/getting-started/]
+
+##Instalación de Plotly
+La instalacion de Plotly es muy sencilla  y se puede hacer de dos formas diferentes a partir del CRAN oficial de R-Project y tambien se puede descargar la ultima versión desde el repositorio oficial en github.
+
+Intalacion desde CRAN
+
+Para hacer la intalacion desde el CRAN de R solo se ejecuta el siguiente comando en la pantalla de comandos de R.
+
+>install.packages("plotly")
+
+Para hacer la instalacion de la ultima versión de Plotly desde Github, es necesario tener instalado el paquete "devtools", para instalar el paquete sencillamente se escribe el siguiente comando en la consola de comandos de R:
+
+>install.packages("devtools")
+
+Una vez instalado el paquete devtools se continua para hacer la descarga desde github tecleando el siguiente comando desde la terminal de comandos en R:
+
+>devtools::install_github("ropensci/plotly")
+
+Ya está instalado ahora Plotly en tu máquina!!!
+
+##Ejemplo en plotly
+
+A continuacion se muestra un ejemplo de grafico de Barra creado con la libreria Plotly 
+
+```{r}
+library(plotly)
+library(dplyr)
+p <- plot_ly(
+  x = c("Computer", "Tv", "Telephone","smartwatch" ),
+  y = c(18, 12, 25, 5),
+  name = "Most Used Technology",
+  type = "bar",
+  filename="r-docs/simple-bar"
+  )
+p
+```
+
